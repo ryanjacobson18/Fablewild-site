@@ -22,7 +22,8 @@ body {
 .hero {
   min-height: 100vh;
   background:
-    linear-gradient(rgba(8, 12, 9, 0.55), rgba(8, 12, 9, 0.72)),
+    radial-gradient(circle at center, rgba(255, 223, 120, 0.12), transparent 60%),
+    linear-gradient(rgba(8, 12, 9, 0.55), rgba(8, 12, 9, 0.78)),
     url('forest.png');
   background-size: cover;
   background-position: center;
@@ -41,6 +42,8 @@ body {
   width: min(460px, 78vw);
   display: block;
   margin: 0 auto 18px;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4))
+          drop-shadow(0 0 18px rgba(212,175,55,0.35));
 }
 
 .tagline {
@@ -68,10 +71,11 @@ body {
 .container {
   max-width: 980px;
   margin: 0 auto;
-  background: rgba(247, 243, 235, 0.97);
+  background: linear-gradient(180deg, #f7f2e7 0%, #efe5c9 100%);
   color: #2c342c;
   border-radius: 28px;
-  padding: 56px 28px;
+  padding: 72px 36px;
+  border: 1px solid rgba(164,132,59,0.15);
   box-shadow: 0 26px 70px rgba(0,0,0,0.35);
   backdrop-filter: blur(4px);
 }
@@ -113,8 +117,9 @@ body {
   max-width: 380px;
   display: block;
   margin: 0 auto;
-  filter: drop-shadow(0 18px 26px rgba(72, 58, 19, 0.22));
   animation: floaty 4.5s ease-in-out infinite;
+  filter: drop-shadow(0 20px 35px rgba(0,0,0,0.25))
+          drop-shadow(0 0 12px rgba(255, 215, 120, 0.25));
 }
 
 .story {
@@ -187,10 +192,12 @@ button {
   font-weight: 600;
   font-size: 15px;
   box-shadow: 0 8px 18px rgba(41,66,48,0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
   transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(41,66,48,0.25);
 }
 
 .footer {
@@ -231,7 +238,7 @@ button:hover {
     <img src="logo.png" alt="Fablewild logo" class="logo">
     <div class="tagline">A soft place for stories to begin</div>
     <div class="subtext">
-      Comforting woodland companions designed to bring calm, wonder, and a little everyday magic to growing imaginations.
+      Comfort-driven companions inspired by storybooks, designed to bring calm, warmth, and a little everyday magic.
     </div>
   </div>
 </section>
@@ -267,7 +274,7 @@ button:hover {
       <p>Be the first to hear when Fablewild opens its forest gates.</p>
       <div class="email-box">
         <input type="email" placeholder="Enter your email">
-        <button>Join the Waitlist</button>
+        <button>Get Early Access</button>
       </div>
     </section>
   </main>
