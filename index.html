@@ -5,143 +5,272 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fablewild</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #0f1a12;
+  background: #0d140f;
+  color: #f5f1e8;
 }
 
-/* HERO SECTION */
 .hero {
-  height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('forest.png');
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(8, 12, 9, 0.55), rgba(8, 12, 9, 0.72)),
+    url('forest.png');
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 48px 20px 120px;
   text-align: center;
 }
 
 .hero-content {
-  max-width: 700px;
+  max-width: 760px;
 }
 
 .logo {
-  width: 320px;
-  margin-bottom: 20px;
+  width: min(460px, 78vw);
+  display: block;
+  margin: 0 auto 18px;
 }
 
 .tagline {
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  color: #f5e6b3;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.15;
+  color: #f3df9b;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.35);
+  margin-bottom: 16px;
 }
 
-/* MAIN CARD */
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 80px 20px;
-  text-align: center;
-  background: #f6f4ef;
-  border-radius: 20px;
-  margin-top: -80px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
-}
-
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  margin-bottom: 20px;
-  color: #2f4f34;
-}
-
-p {
-  font-size: 18px;
+.subtext {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: clamp(16px, 2vw, 20px);
   line-height: 1.7;
-  color: #4a4f4a;
+  color: rgba(255,255,255,0.88);
 }
 
-/* DRAGON */
+.card-wrap {
+  margin-top: -90px;
+  padding: 0 20px 60px;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  background: rgba(247, 243, 235, 0.97);
+  color: #2c342c;
+  border-radius: 28px;
+  padding: 56px 28px;
+  box-shadow: 0 26px 70px rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 5vw, 52px);
+  color: #294230;
+  margin: 0 0 14px;
+  text-align: center;
+}
+
+.lead {
+  max-width: 700px;
+  margin: 0 auto 34px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #4d564d;
+  text-align: center;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 36px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.dragon-panel {
+  background: linear-gradient(180deg, #f5ead0, #efe3c1);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: inset 0 0 0 1px rgba(164,132,59,0.14);
+}
+
 .dragon {
-  width: 320px;
-  margin: 30px auto;
+  width: 100%;
+  max-width: 380px;
   display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 18px 26px rgba(72, 58, 19, 0.22));
+  animation: floaty 4.5s ease-in-out infinite;
 }
 
-/* EMAIL */
+.story {
+  text-align: left;
+}
+
+.story h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: #294230;
+  margin: 0 0 14px;
+}
+
+.story p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: #4d564d;
+  margin: 0 0 16px;
+}
+
+.highlight {
+  color: #876718;
+  font-weight: 600;
+}
+
+.waitlist {
+  margin-top: 42px;
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid rgba(41,66,48,0.12);
+}
+
+.waitlist h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #294230;
+  margin: 0 0 10px;
+}
+
+.waitlist p {
+  margin: 0 0 22px;
+  color: #5b635b;
+  line-height: 1.7;
+}
+
 .email-box {
-  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 input {
-  padding: 16px;
-  width: 65%;
-  max-width: 320px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  padding: 16px 18px;
+  width: min(360px, 82vw);
+  border: 1px solid #d9d0bd;
+  border-radius: 12px;
   font-size: 16px;
+  outline: none;
+  background: #fffdfa;
 }
 
 button {
-  padding: 16px 22px;
-  margin-left: 10px;
+  padding: 16px 24px;
   border: none;
-  background: #2f4f34;
+  background: linear-gradient(180deg, #35583c, #294230);
   color: white;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 8px 18px rgba(41,66,48,0.18);
 }
 
 button:hover {
-  background: #243c28;
+  transform: translateY(-1px);
 }
 
-/* FOOTER */
 .footer {
   text-align: center;
-  padding: 40px;
-  color: #bbb;
+  padding: 18px 20px 40px;
+  color: rgba(255,255,255,0.72);
   font-size: 14px;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 860px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story {
+    text-align: center;
+  }
+
+  .container {
+    padding: 44px 22px;
+  }
+
+  .card-wrap {
+    margin-top: -70px;
+  }
 }
 </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<div class="hero">
+<section class="hero">
   <div class="hero-content">
-    <img src="logo.png" class="logo">
+    <img src="logo.png" alt="Fablewild logo" class="logo">
     <div class="tagline">A soft place for stories to begin</div>
+    <div class="subtext">
+      Comforting woodland companions designed to bring calm, wonder, and a little everyday magic to growing imaginations.
+    </div>
   </div>
-</div>
+</section>
 
-<!-- MAIN -->
-<div class="container">
+<div class="card-wrap">
+  <main class="container">
+    <h1 class="section-title">Meet the Woodland Dragon</h1>
+    <p class="lead">
+      At Fablewild, every creature is made to bring <span class="highlight">comfort, calm, and a little bit of magic</span> into everyday life.
+    </p>
 
-  <h2>Meet the Woodland Dragon</h2>
+    <div class="feature-grid">
+      <div class="dragon-panel">
+        <img src="dragon.png" alt="Woodland Dragon plush illustration" class="dragon">
+      </div>
 
-  <img src="dragon.png" class="dragon">
+      <div class="story">
+        <h3>Gentle, cozy, and full of wonder</h3>
+        <p>
+          From quiet moments to big adventures, Fablewild is built around the idea that comfort can feel special.
+        </p>
+        <p>
+          Our first creature, the Woodland Dragon, is a soft companion inspired by bedtime stories, peaceful routines, and the little rituals that help children feel safe and at ease.
+        </p>
+        <p>
+          Thoughtfully designed with a warm woodland spirit, it is meant to feel like a keepsake from a magical world just beyond the trees.
+        </p>
+      </div>
+    </div>
 
-  <p>
-    At Fablewild, every creature is made to bring comfort, calm, and a little bit of magic into everyday life.
-  </p>
-
-  <p>
-    From quiet moments to big adventures, your story begins here.
-  </p>
-
-  <div class="email-box">
-    <input type="email" placeholder="Enter your email">
-    <button>Join the Waitlist</button>
-  </div>
-
+    <section class="waitlist">
+      <h3>Launching soon</h3>
+      <p>Be the first to hear when Fablewild opens its forest gates.</p>
+      <div class="email-box">
+        <input type="email" placeholder="Enter your email">
+        <button>Join the Waitlist</button>
+      </div>
+    </section>
+  </main>
 </div>
 
 <div class="footer">
