@@ -68,7 +68,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 48px 20px 120px;
+  padding: 80px 20px 160px;
   overflow: hidden;
 }
 
@@ -82,7 +82,22 @@ body {
   z-index: 1;
   pointer-events: none;
 }
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 180px;
 
+  background: linear-gradient(
+    to bottom,
+    rgba(11,17,13,0) 0%,
+    rgba(11,17,13,0.72) 100%
+  );
+
+  z-index: 2;
+  pointer-events: none;
 .hero-content {
   position: relative;
   z-index: 3;
@@ -91,7 +106,7 @@ body {
 }
 
 .logo {
-  width: min(900px, 94vw);
+  width: min(760px, 88vw);
   display: block;
   margin: 0 auto 10px;
   filter:
@@ -226,13 +241,16 @@ body {
   margin-top: 18px;
 }
 
-.dragon-panel {
-  background: linear-gradient(180deg, rgba(245,234,208,0.94), rgba(239,227,193,0.94));
-  border-radius: 26px;
-  padding: 30px;
-  box-shadow:
-    inset 0 0 0 1px rgba(164,132,59,0.14),
-    0 14px 28px rgba(82,65,24,0.08);
+.dragon {
+  width: 100%;
+  max-width: 520px;
+  display: block;
+  margin: 0 auto;
+  animation: floaty 6s ease-in-out infinite;
+
+  filter:
+    drop-shadow(0 30px 40px rgba(0,0,0,0.35))
+    drop-shadow(0 0 18px rgba(255,215,120,0.14));
 }
 
 .dragon {
